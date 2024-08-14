@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (event.key === 'Enter') {
             event.preventDefault(); // Prevent form submission
             numRows = parseInt(rowInput.value) || 0;
+            // numRows = numRows % 2 === 0 ? numRows + 1: numRows;  //Ensure numRows is odd
+            // rowInput.value = numRows //update the input fiels with the odd number
             createPyramid(numRows);
         }
     });
@@ -49,11 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function createPyramid(rows) {
         pyramidContainer.innerHTML = ''; // Clear previous pyramid
         // rowIndex = 0;
-        for (let i = 1; i <= rows; i++) {
+        for (let i = 0; i <= rows; i ++) {
             const row = document.createElement('div');
             row.classList.add('pyramid-row');
 
-            for (let j = 0; j < i; j++) {
+            // ensure each row has an odd number of leds
+            const numLeds = 2 * i + 1;
+            for (let j = 0; j < numLeds; j++) {
                 const led = document.createElement('div');
                 led.classList.add('led');
                 row.appendChild(led);
