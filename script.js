@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createPyramid(rows) {
         pyramidContainer.innerHTML = ''; // Clear previous pyramid
         // rowIndex = 0;
-        for (let i = 0; i <= rows; i ++) {
+        for (let i = 0; i < rows; i ++) {
             const row = document.createElement('div');
             row.classList.add('pyramid-row');
 
