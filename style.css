@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    justify-content:space-between;
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto;
+}
+.btn{
+    padding: 10px 30px;
+    background: transparent;
+    border: none;
+}
+#start{
+    background: rgb(205, 100, 90);
+}
+#stop{
+    background: rgb(205, 90, 180);
+}
+.click{
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.led {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: gray;
+}
+.led.active {
+    background-color: red;
+}
+.pyramid-container {
+    margin-top: 20px;
+    text-align: center;
+}
+.pyramid-row {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LED PYRAMID</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="formss" id="formss">
+            <form action="">
+                <button id="row" class="btn row">Rows</button>
+                <input type="number" id="rowsInput" class="text" placeholder="press enter">
+            </form>
+            <form action="">
+                <button id="delay" class="btn delay">Delay</button>
+                <input type="number" id="delayInput" class="text" min="0" step="1" placeholder="press enter">
+            </form>
+
+            <div class="buttons">
+                <div class="click" id="start">Start</div>
+                <div class="click" id="stop">Stop</div>
+            </div>
+
+            <div class="pyramid-container"></div>
+
+        </div>
+    </div>
+            
+    <script src="script.js"></script>
+</body>
+</html>
