@@ -3,8 +3,6 @@
 }
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: black;
 }
 .container{
@@ -23,10 +21,11 @@ input{
     justify-content:space-between;
     max-width: 500px;
     width: 100%;
-    margin: 20px auto;
+    margin: 40px auto;
     color: #fff;
     font-weight: bold;
-}
+    align-items: center;
+} 
 .btn{
     padding: 10px 30px;
     background: transparent;

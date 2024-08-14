@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const startButton = document.getElementById('start');
     const stopButton = document.getElementById('stop');
-    const rowInput = document.querySelectorAll('#formss input.text')[0];
-    const delayInput = document.querySelectorAll('#formss input.text')[1];
+    // const rowInput = document.querySelectorAll('#formss input.text')[0];
+    const rowInput = document.getElementById('rowsInput');
+    // const delayInput = document.querySelectorAll('#formss input.text')[1];
+    const delayInput = document.getElementById('delayInput');
     const pyramidContainer = document.querySelector('.pyramid-container');
     let timeoutId;
     let numRows;
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update the row number and delay when pressing Enter
     rowInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            event.preventDefault(); // Prevent form submission
+            event.preventDefault(); // Prevent from submission
             numRows = parseInt(rowInput.value) || 0;
             // numRows = numRows % 2 === 0 ? numRows + 1: numRows;  //Ensure numRows is odd
             // rowInput.value = numRows //update the input fiels with the odd number
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resetPyramid();
             lightUpPyramid();
         } 
-        else {
+        else { 
             alert('Please enter valid number of rows and delay.');
         }
     });
@@ -54,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 0; i < rows; i ++) {
             const row = document.createElement('div');
             row.classList.add('pyramid-row');
-
+                                 
             // ensure each row has an odd number of leds
             const numLeds = 2 * i + 1;
             for (let j = 0; j < numLeds; j++) {
@@ -82,6 +84,9 @@ function lightUpPyramid(){
             const previousRow = pyramidContainer.children[currentRow - 1];
             const previousLeds = previousRow.children;
             Array.from(previousLeds).forEach(led => led.classList.remove('active'));
+            // previousRow.querySelectorAll('.pyramid-row').forEach(led => {
+            //     led.classList.remove('active');
+            // })
         }
 
         if(currentRow < numRows){
